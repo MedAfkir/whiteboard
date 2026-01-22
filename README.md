@@ -1,73 +1,22 @@
-# React + TypeScript + Vite
+# Whiteboard App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A collaborative whiteboard application built with React, TypeScript, and Zustand for state management.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Drawing Tools:** Pen, rectangle, ellipse, line, and text tools
+- **Element Manipulation:** Move, resize, rotate, and delete elements
+- **Selection:** Single-click selection, multi-select with Ctrl/Cmd, and drag-to-select
+- **Undo/Redo:** Track changes to elements and allow undo/redo operations (not implemented yet)
+- **Keyboard Shortcuts:** Support for common whiteboard operations
+- **Responsive Design:** Works on different screen sizes
 
-## React Compiler
+## Features & Issues
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Features to be implemented in the future & issues to be fixed:
 
-## Expanding the ESLint configuration
+- **Text Editing:** After adding a text element to the whiteboard, you cannot edit its content inline.
+- **Resizing Rotated Shapes:** When resizing a shape that has been rotated (e.g., by 10°), the resize operation does not behave correctly and the shape may distort.
+- **Select All / Drag Selection:** When using drag-to-select, some shapes (especially pen/freedraw shapes) are not selected correctly.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+These are tracked for future improvement.
