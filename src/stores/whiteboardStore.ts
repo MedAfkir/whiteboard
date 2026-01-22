@@ -3,7 +3,6 @@
  */
 
 import { create } from 'zustand';
-import { nanoid } from 'nanoid';
 import type {
     AppState,
     WhiteboardElement,
@@ -64,7 +63,7 @@ const DEFAULT_TOOL_OPTIONS = {
     opacity: 1,
 };
 
-export const useWhiteboardStore = create<WhiteboardStore>((set, get) => ({
+export const useWhiteboardStore = create<WhiteboardStore>((set) => ({
     // Initial state
     viewport: DEFAULT_VIEWPORT,
     elements: new Map(),
@@ -123,7 +122,7 @@ export const useWhiteboardStore = create<WhiteboardStore>((set, get) => ({
             if (!element) return state;
 
             const newElements = new Map(state.elements);
-            newElements.set(id, { ...element, ...updates });
+            newElements.set(id, { ...element, ...updates } as WhiteboardElement);
             return { elements: newElements };
         });
     },

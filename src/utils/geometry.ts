@@ -74,7 +74,6 @@ export function getCombinedBounds(elements: WhiteboardElement[]): Bounds | null 
  * Update element bounds based on new position/size
  */
 export function updateElementBounds(
-    element: WhiteboardElement,
     bounds: Partial<Bounds>
 ): Partial<WhiteboardElement> {
     const updates: Partial<WhiteboardElement> = {};

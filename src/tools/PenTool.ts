@@ -2,7 +2,6 @@
  * Pen Tool - Draw freehand paths on the canvas
  */
 
-import type { Point } from '../types/whiteboard.types';
 import { screenToWorld } from '../lib/canvas-utils';
 import { useWhiteboardStore } from '../stores/whiteboardStore';
 import { createFreedraw } from '../utils/element-factory';

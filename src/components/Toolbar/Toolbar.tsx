@@ -5,8 +5,7 @@ import {
     Minus,
     ArrowRight,
     Pen,
-    Type,
-    Palette
+    Type
 } from 'lucide-react';
 import { useWhiteboardStore } from '../../stores/whiteboardStore';
 import type { ToolType } from '../../types/whiteboard.types';
